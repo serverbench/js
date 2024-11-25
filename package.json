@@ -1,11 +1,17 @@
 {
   "name": "@serverbench/js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/index.mts",
   "files": [
     "dist"
   ],
