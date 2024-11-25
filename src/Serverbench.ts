@@ -1,4 +1,4 @@
-import Store from "./store/Store"
+import Store from "./store/Store.js"
 
 export default class Serverbench {
 

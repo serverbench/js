@@ -1,5 +1,5 @@
-import IframeResizer from "../../node_modules/@open-iframe-resizer/core/dist/index"
-import Serverbench from "../Serverbench"
+import { initialize } from "../../node_modules/@open-iframe-resizer/core/dist/index.js"
+import Serverbench from "../Serverbench.js"
 
 export default class Element {
 
@@ -17,12 +17,12 @@ export default class Element {
         this.args = args
     }
 
-    setDark(dark:boolean){
+    setDark(dark: boolean) {
         this.dark = dark
         return this
     }
 
-    setBackground(background:boolean){
+    setBackground(background: boolean) {
         this.background = background
         return this
     }
@@ -45,7 +45,7 @@ export default class Element {
         iframe.src = `https://safe.serverbench.io${this.path}?${queryParams.toString()}`;
         iframe.style.width = '100%';
         const appended = element.appendChild(iframe);
-        IframeResizer.initialize({}, appended);
+        initialize({}, appended);
         return this
     }
 

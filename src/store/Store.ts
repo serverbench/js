@@ -1,9 +1,9 @@
-import Element from "../element/Element";
-import Member from "../Member";
-import type Serverbench from "../Serverbench";
-import IDiscount from "./IDiscount";
-import ISkuPrice from "./ISkuPrice";
-import type IStore from "./IStore";
+import Element from "../element/Element.js";
+import Member from "../Member.js";
+import type Serverbench from "../Serverbench.js";
+import IDiscount from "./IDiscount.js";
+import ISkuPrice from "./ISkuPrice.js";
+import type IStore from "./IStore.js";
 
 export default class Store {
 

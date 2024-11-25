@@ -2,15 +2,21 @@
   "name": "@serverbench/js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/Serverbench.js",
+  "module": "./dist/Serverbench.mjs",
+  "types": "./dist/Serverbench.d.ts",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsup"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   },
   "dependencies": {
