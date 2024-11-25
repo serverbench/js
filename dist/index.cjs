@@ -350,9 +350,4 @@ var Serverbench = _Serverbench;
 
 // src/index.ts
 var src_default = Serverbench;
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  Element,
-  Store
-});
 //# sourceMappingURL=index.cjs.map
