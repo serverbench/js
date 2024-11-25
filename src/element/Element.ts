@@ -31,6 +31,7 @@ export default class Element {
         const queryParams = new URLSearchParams()
         queryParams.set('clientId', this.client.clientId)
         queryParams.set('clientSecret', this.client.clientSecret)
+        queryParams.set('origin', window.location.href)
         if (this.dark) queryParams.set('dark', 'true')
         if (this.background) queryParams.set('background', 'true')
         for (const key in this.args) {
