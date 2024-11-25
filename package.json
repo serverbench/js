@@ -1,6 +1,6 @@
 {
   "name": "@serverbench/js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -10,12 +10,14 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "publish": "git add . && git commit -m 'minor improvements' && pnpm exec npm-bump patch && git add . && git commit -m 'bump' && git push && pnpm publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "npm-bump": "^0.0.33",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   },

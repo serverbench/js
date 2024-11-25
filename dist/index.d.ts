@@ -96,4 +96,4 @@ declare class Serverbench {
     post(realm: string, url: string, body?: any): Promise<any>;
 }
 
-export { Element, type ICountryCurrency, type ISku, type ISkuPerkUsage, type ISkuPrice, type IStore, type IStoreCategory, type IStoreCategorySet, type Member, Store, Serverbench as default };
+export { Element, type ICountryCurrency, type IDiscount, type ISku, type ISkuPerkUsage, type ISkuPrice, type IStore, type IStoreCategory, type IStoreCategorySet, type Member, Store, Serverbench as default };

@@ -9,16 +9,18 @@ import IStoreCategory from "./store/IStoreCategory.js";
 import IStoreCategorySet from "./store/IStoreCategorySet.js";
 import Store from "./store/Store.js";
 import Element from "./element/Element.js"
+import IDiscount from "./store/IDiscount.js";
 
 export {
     Store,
     ICountryCurrency,
+    IDiscount,
     ISku,
     ISkuPerkUsage,
     ISkuPrice,
     IStore,
     IStoreCategory,
-    IStoreCategorySet
+    IStoreCategorySet,
 }
 
 export {
