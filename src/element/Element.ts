@@ -48,6 +48,10 @@ export default class Element {
         const iframe = document.createElement('iframe');
         iframe.src = `https://safe.serverbench.io${this.path}?${queryParams.toString()}`;
         iframe.style.width = '100%';
+        iframe.style.height = '0'
+        iframe.style.border = 'none';
+        iframe.style.overflowY = 'hidden';
+        iframe.frameBorder = '0';
         
         const appended = element.appendChild(iframe);
         initialize({}, appended);
