@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/store/IStoreCategorySet.ts"],"sourcesContent":["export default interface IStoreCategorySet {\r\n\r\n    id: string\r\n    name: string\r\n\r\n}"],"mappings":";;;;;;;;;;;;;;;;AAAA;AAAA;","names":[]}

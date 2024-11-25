@@ -1,7 +1,4 @@
-"use strict";
 var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
@@ -17,19 +14,6 @@ var __spreadValues = (a2, b2) => {
     }
   return a2;
 };
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -50,13 +34,6 @@ var __async = (__this, __arguments, generator) => {
     step((generator = generator.apply(__this, __arguments)).next());
   });
 };
-
-// src/element/Element.ts
-var Element_exports = {};
-__export(Element_exports, {
-  default: () => Element
-});
-module.exports = __toCommonJS(Element_exports);
 
 // node_modules/.pnpm/@open-iframe-resizer+core@1.2.1/node_modules/@open-iframe-resizer/core/dist/index.js
 var g = () => typeof window < "u";
@@ -272,4 +249,85 @@ var Element = class {
     });
   }
 };
-//# sourceMappingURL=Element.cjs.map
+
+// src/store/Store.ts
+var Store = class {
+  constructor(client) {
+    this.client = client;
+  }
+  get(username, eid) {
+    return __async(this, null, function* () {
+      return yield this.client.post("community", "/store/view", {
+        username,
+        eid
+      });
+    });
+  }
+  checkout(prices, discounts, member) {
+    return new Element(
+      this.client,
+      "/community/checkout",
+      {
+        prices: prices.map((price) => price.id).join(","),
+        discounts: discounts.map((discount) => discount.id).join(","),
+        member: member.id
+      }
+    );
+  }
+};
+
+// src/Serverbench.ts
+var _Serverbench = class _Serverbench {
+  constructor(clientId, clientSecret, test) {
+    this.clientId = clientId;
+    this.clientSecret = clientSecret;
+    this.test = test;
+  }
+  static get(clientId, clientSecret, test = false) {
+    if (!_Serverbench.instance || _Serverbench.instance.clientId !== clientId || _Serverbench.instance.clientSecret !== clientSecret || _Serverbench.instance.test !== test) {
+      _Serverbench.instance = new _Serverbench(clientId, clientSecret, test);
+    }
+    return _Serverbench.instance;
+  }
+  get store() {
+    return new Store(this);
+  }
+  fetch(realm, url, body) {
+    return __async(this, null, function* () {
+      const domain = this.test ? "https://dev.serverbench.io" : "https://api.serverbench.io";
+      const headers = new Headers({
+        authorization: `ApiKey ${this.clientSecret}`
+      });
+      if (body) {
+        headers.set("Content-Type", "application/json");
+      }
+      const response = yield fetch(`${domain}/${realm}/${this.clientId}${url}`, {
+        headers,
+        method: body ? "POST" : "GET",
+        body: body ? JSON.stringify(body) : void 0
+      });
+      return response.json();
+    });
+  }
+  get(realm, url) {
+    return __async(this, null, function* () {
+      return this.fetch(realm, url);
+    });
+  }
+  post(_0, _1) {
+    return __async(this, arguments, function* (realm, url, body = {}) {
+      return this.fetch(realm, url, body);
+    });
+  }
+};
+_Serverbench.instance = null;
+var Serverbench = _Serverbench;
+
+// src/index.ts
+var src_default = Serverbench;
+export {
+  Element,
+  Store,
+  src_default as default
+};
+//# sourceMappingURL=index.js.map

@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/store/IDiscount.ts"],"sourcesContent":["import type ISkuPrice from \"./ISkuPrice.js\"\r\n\r\nexport default interface IDiscount {\r\n    id: string\r\n    amount: number | null\r\n    percentage: number | null\r\n    absolute: number\r\n    end: Date | null\r\n    price: ISkuPrice\r\n}"],"mappings":";;;;;;;;;;;;;;;;AAAA;AAAA;","names":[]}

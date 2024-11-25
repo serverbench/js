@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/store/ISkuPerkUsage.ts"],"sourcesContent":["export default interface ISkuPerkUsage {\r\n    id: string\r\n    name: string\r\n    amount: number | null\r\n}"],"mappings":";;;;;;;;;;;;;;;;AAAA;AAAA;","names":[]}

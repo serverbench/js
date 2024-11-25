@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/store/ISkuPrice.ts"],"sourcesContent":["import type ICountryCurrency from \"./ICountryCurrency.js\"\r\n\r\nexport default interface ISkuPrice {\r\n\r\n    id: string\r\n    amount: number\r\n    currency: ICountryCurrency\r\n    frequency: string | null\r\n\r\n}"],"mappings":";;;;;;;;;;;;;;;;AAAA;AAAA;","names":[]}
