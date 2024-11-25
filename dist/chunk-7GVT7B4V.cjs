@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkD3A3YNFTcjs = require('./chunk-D3A3YNFT.cjs');var i=class{constructor(e){this.client=e}async get(e,r){return await this.client.post("community","/store/view",{username:e,eid:r})}checkout(e,r,c){return new (0, _chunkD3A3YNFTcjs.a)(this.client,"/community/checkout",{prices:e.map(t=>t.id).join(","),discounts:r.map(t=>t.id).join(","),member:c.id})}};exports.a = i;
-//# sourceMappingURL=chunk-7GVT7B4V.cjs.map
