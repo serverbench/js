@@ -1,0 +1,2 @@
+import{a as o}from"./chunk-RRHBEYIS.js";var i=class{constructor(e){this.client=e}async get(e,r){return await this.client.post("community","/store/view",{username:e,eid:r})}checkout(e,r,c){return new o(this.client,"/community/checkout",{prices:e.map(t=>t.id).join(","),discounts:r.map(t=>t.id).join(","),member:c.id})}};export{i as a};
+//# sourceMappingURL=chunk-HM6YU4WY.js.map
