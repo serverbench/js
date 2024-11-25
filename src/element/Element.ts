@@ -37,14 +37,18 @@ export default class Element {
         for (const key in this.args) {
             const value = this.args[key]
             if (Array.isArray(value)) {
-                queryParams.set(key, value.join(','))
+                if (value.length > 0) queryParams.set(key, value.join(','))
             } else {
                 queryParams.set(key, value)
             }
         }
+
+        element.innerHTML = '';
+
         const iframe = document.createElement('iframe');
         iframe.src = `https://safe.serverbench.io${this.path}?${queryParams.toString()}`;
         iframe.style.width = '100%';
+        
         const appended = element.appendChild(iframe);
         initialize({}, appended);
         return this
