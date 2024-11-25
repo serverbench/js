@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/Member.ts"],"sourcesContent":["export default interface Member {\r\n    name: string\r\n    eid: string\r\n    id: string\r\n}"],"mappings":";;;;;;;;;;;;;;;;AAAA;AAAA;","names":[]}
