@@ -11,7 +11,7 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
-    "publish": "git add . && git commit -m 'minor improvements' && pnpm exec npm-bump patch && git add . && git commit -m 'bump' && git push && pnpm publish"
+    "publish": "git add . && git commit -m \"minor improvements\" && git push && pnpm publish"
   },
   "keywords": [],
   "author": "",
