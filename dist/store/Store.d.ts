@@ -1,4 +1,4 @@
-export { a as default } from '../Serverbench-F_xIsjPx.js';
+export { a as default } from '../Serverbench-B33LtS86.js';
 import '../Member.js';
 import './IDiscount.js';
 import './ISkuPrice.js';

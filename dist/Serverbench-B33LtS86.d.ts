@@ -20,6 +20,7 @@ declare class Store {
     constructor(client: Serverbench);
     get(username?: string, eid?: string): Promise<IStore>;
     checkout(prices: ISkuPrice[], discounts: IDiscount[], member: Member): Element;
+    billing(): Element;
 }
 
 declare class Serverbench {

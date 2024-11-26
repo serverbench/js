@@ -1,4 +1,4 @@
-export { a as default } from '../Serverbench-C0I-PLPz.cjs';
+export { a as default } from '../Serverbench--7Ya5DBE.cjs';
 import '../Member.cjs';
 import './IDiscount.cjs';
 import './ISkuPrice.cjs';

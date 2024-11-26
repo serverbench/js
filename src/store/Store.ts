@@ -32,4 +32,8 @@ export default class Store {
         )
     }
 
+    billing() {
+        return new Element(this.client, '/billing')
+    }
+
 }
