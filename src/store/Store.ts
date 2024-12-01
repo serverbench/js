@@ -20,14 +20,17 @@ export default class Store {
         })) as IStore
     }
 
-    checkout(prices: ISkuPrice[], discounts: IDiscount[], member: Member) {
+    checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string) {
+        const finalPrices = prices.map(price => typeof price === 'string' ? price : price.id)
+        const finalDiscounts = discounts.map(discount => typeof discount === 'string' ? discount : discount.id)
+        const finalMember = typeof member === 'string' ? member : member.id
         return new Element(
             this.client,
             '/community/checkout',
             {
-                prices: prices.map(price => price.id).join(','),
-                discounts: discounts.map(discount => discount.id).join(','),
-                member: member.id
+                prices: finalPrices.join(','),
+                discounts: finalDiscounts.join(','),
+                member: finalMember
             }
         )
     }

@@ -1,7 +1,7 @@
-import Member from './Member.js';
-import IDiscount from './store/IDiscount.js';
-import ISkuPrice from './store/ISkuPrice.js';
-import IStore from './store/IStore.js';
+import Member from './Member.cjs';
+import IDiscount from './store/IDiscount.cjs';
+import ISkuPrice from './store/ISkuPrice.cjs';
+import IStore from './store/IStore.cjs';
 
 declare class Element {
     private readonly client;
@@ -9,17 +9,21 @@ declare class Element {
     private background;
     private readonly path;
     private readonly args;
+    private eventListeners;
     constructor(client: Serverbench, path: string, args?: Record<string, string | string[]>, dark?: boolean, background?: boolean);
     setDark(dark: boolean): this;
     setBackground(background: boolean): this;
     mount(element: HTMLElement): Promise<this>;
+    private handleMessage;
+    private triggerEvent;
+    addEventListener(eventName: string, callback: Function): this;
 }
 
 declare class Store {
     private client;
     constructor(client: Serverbench);
     get(username?: string, eid?: string): Promise<IStore>;
-    checkout(prices: ISkuPrice[], discounts: IDiscount[], member: Member): Element;
+    checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string): Element;
     billing(): Element;
 }
 

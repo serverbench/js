@@ -1,0 +1,2 @@
+import{a as n}from"./chunk-YFXZ6AQJ.js";var o=class{constructor(e){this.client=e}async get(e,r){return await this.client.post("community","/store/view",{username:e,eid:r})}checkout(e,r,i){let s=e.map(t=>typeof t=="string"?t:t.id),c=r.map(t=>typeof t=="string"?t:t.id),m=typeof i=="string"?i:i.id;return new n(this.client,"/community/checkout",{prices:s.join(","),discounts:c.join(","),member:m})}billing(){return new n(this.client,"/billing")}};export{o as a};
+//# sourceMappingURL=chunk-5Q7FLP6U.js.map

@@ -8,6 +8,7 @@ export default class Element {
     private background: boolean
     private readonly path: string
     private readonly args: Record<string, string | string[]>
+    private eventListeners: { [key: string]: Function[] } = {};
 
     constructor(client: Serverbench, path: string, args: Record<string, string | string[]> = {}, dark: boolean = false, background: boolean = false) {
         this.client = client
@@ -15,6 +16,7 @@ export default class Element {
         this.background = background
         this.path = path
         this.args = args
+        window.addEventListener('message', this.handleMessage.bind(this));
     }
 
     setDark(dark: boolean) {
@@ -57,6 +59,29 @@ export default class Element {
         const appended = element.appendChild(iframe);
         initialize({}, appended);
         return this
+    }
+
+    private handleMessage(event: MessageEvent) {
+        if (event.origin !== 'https://safe.serverbench.io') return;
+        const data = event.data;
+        if (data.from === 'serverbench' && data.event) {
+            this.triggerEvent(data.event);
+        }
+    }
+
+    private triggerEvent(eventName: string) {
+        const listeners = this.eventListeners[eventName];
+        if (listeners) {
+            listeners.forEach(callback => callback());
+        }
+    }
+
+    public addEventListener(eventName: string, callback: Function) {
+        if (!this.eventListeners[eventName]) {
+            this.eventListeners[eventName] = [];
+        }
+        this.eventListeners[eventName].push(callback);
+        return this;
     }
 
 }
