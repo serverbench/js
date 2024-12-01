@@ -32,6 +32,7 @@ export default class Element {
         queryParams.set('clientId', this.client.clientId)
         queryParams.set('clientSecret', this.client.clientSecret)
         queryParams.set('origin', window.location.href)
+        if (this.client.test) queryParams.set('test', 'true')
         if (this.dark) queryParams.set('dark', 'true')
         if (this.background) queryParams.set('background', 'true')
         for (const key in this.args) {
@@ -52,7 +53,7 @@ export default class Element {
         iframe.style.border = 'none';
         iframe.style.overflowY = 'hidden';
         iframe.frameBorder = '0';
-        
+
         const appended = element.appendChild(iframe);
         initialize({}, appended);
         return this
