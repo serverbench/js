@@ -26,7 +26,7 @@ export default class Serverbench {
     }
 
     private async fetch(realm: string, url: string, body?: any) {
-        const domain = this.test ? 'https://dev.serverbench.io' : 'https://api.serverbench.io'
+        const domain = this.test ? 'https://dev.serverbench.io' : 'https://api.beta.serverbench.io'
         const headers = new Headers({
             authorization: `ApiKey ${this.clientSecret}`,
         })
