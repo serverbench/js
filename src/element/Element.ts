@@ -34,6 +34,7 @@ export default class Element {
         queryParams.set('clientId', this.client.clientId)
         queryParams.set('clientSecret', this.client.clientSecret)
         queryParams.set('origin', window.location.href)
+        queryParams.set('allow', "payment") // apple pay support
         if (this.client.test) queryParams.set('test', 'true')
         if (this.dark) queryParams.set('dark', 'true')
         if (this.background) queryParams.set('background', 'true')
