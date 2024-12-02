@@ -20,7 +20,7 @@ export default class Store {
         })) as IStore
     }
 
-    checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string) {
+    checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null) {
         const finalPrices = prices.map(price => typeof price === 'string' ? price : price.id)
         const finalDiscounts = discounts.map(discount => typeof discount === 'string' ? discount : discount.id)
         const finalMember = typeof member === 'string' ? member : member.id
@@ -30,7 +30,8 @@ export default class Store {
             {
                 prices: finalPrices.join(','),
                 discounts: finalDiscounts.join(','),
-                member: finalMember
+                member: finalMember,
+                country: country ?? undefined
             }
         )
     }

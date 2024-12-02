@@ -7,10 +7,10 @@ export default class Element {
     private dark: boolean
     private background: boolean
     private readonly path: string
-    private readonly args: Record<string, string | string[]>
+    private readonly args: Record<string, string | string[] | undefined>
     private eventListeners: { [key: string]: Function[] } = {};
 
-    constructor(client: Serverbench, path: string, args: Record<string, string | string[]> = {}, dark: boolean = false, background: boolean = false) {
+    constructor(client: Serverbench, path: string, args: Record<string, string | string[] | undefined> = {}, dark: boolean = false, background: boolean = false) {
         this.client = client
         this.dark = dark
         this.background = background
@@ -42,7 +42,7 @@ export default class Element {
             const value = this.args[key]
             if (Array.isArray(value)) {
                 if (value.length > 0) queryParams.set(key, value.join(','))
-            } else {
+            } else if (value != undefined) {
                 queryParams.set(key, value)
             }
         }
