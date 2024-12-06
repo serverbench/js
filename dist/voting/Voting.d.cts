@@ -1,4 +1,4 @@
-export { E as default } from '../Serverbench-DUQryV8E.cjs';
+export { V as default } from '../Serverbench-DUQryV8E.cjs';
 import '../Member.cjs';
 import '../store/IDiscount.cjs';
 import '../store/ISkuPrice.cjs';

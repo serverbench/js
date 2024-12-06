@@ -27,6 +27,12 @@ declare class Store {
     billing(): Element;
 }
 
+declare class Voting {
+    private readonly client;
+    constructor(client: Serverbench);
+    list(username?: string, eid?: string): Element;
+}
+
 declare class Serverbench {
     clientId: string;
     clientSecret: string;
@@ -35,9 +41,10 @@ declare class Serverbench {
     private constructor();
     static get(clientId: string, clientSecret: string, test?: boolean): Serverbench;
     get store(): Store;
+    get voting(): Voting;
     private fetch;
     get(realm: string, url: string): Promise<any>;
     post(realm: string, url: string, body?: any): Promise<any>;
 }
 
-export { Element as E, Serverbench as S, Store as a };
+export { Element as E, Serverbench as S, Voting as V, Store as a };

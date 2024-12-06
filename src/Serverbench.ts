@@ -1,4 +1,5 @@
 import Store from "./store/Store.js"
+import Voting from "./voting/Voting.js"
 
 export default class Serverbench {
 
@@ -23,6 +24,10 @@ export default class Serverbench {
 
     get store() {
         return new Store(this)
+    }
+
+    get voting() {
+        return new Voting(this)
     }
 
     private async fetch(realm: string, url: string, body?: any) {

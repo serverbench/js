@@ -1,4 +1,4 @@
-export { E as default } from '../Serverbench-CR18julx.js';
+export { V as default } from '../Serverbench-CR18julx.js';
 import '../Member.js';
 import '../store/IDiscount.js';
 import '../store/ISkuPrice.js';
