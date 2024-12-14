@@ -1,2 +1,0 @@
-import{a as n}from"./chunk-DV57NT7W.js";var o=class{constructor(e){this.client=e}async get(e,r){return await this.client.post("community","/store/view",{username:e,eid:r})}checkout(e,r,i,s){let c=e.map(t=>typeof t=="string"?t:t.id),m=r.map(t=>typeof t=="string"?t:t.id),l=typeof i=="string"?i:i.id;return new n(this.client,"/community/checkout",{prices:c.join(","),discounts:m.join(","),member:l,country:s??void 0})}billing(){return new n(this.client,"/billing")}};export{o as a};
-//# sourceMappingURL=chunk-ADUE5SV6.js.map

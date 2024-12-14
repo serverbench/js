@@ -1,0 +1,2 @@
+import{a as t}from"./chunk-BWC56A5D.js";var r=class{constructor(e){this.client=e}list(e,n){return new t(this.client,"/community/vote/list",{username:e,eid:n})}};export{r as a};
+//# sourceMappingURL=chunk-CWW7G4B4.js.map

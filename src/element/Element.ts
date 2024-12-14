@@ -58,10 +58,7 @@ export default class Element {
         iframe.frameBorder = '0';
 
         const appended = element.appendChild(iframe);
-        initialize({
-            checkOrigin: true,
-            enableLegacyLibSupport: true,
-        }, appended);
+        initialize({}, appended);
         return this
     }
 
