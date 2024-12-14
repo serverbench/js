@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkWBGP2JJEcjs = require('./chunk-WBGP2JJE.cjs');var r=class{constructor(e){this.client=e}list(e,n){return new (0, _chunkWBGP2JJEcjs.a)(this.client,"/community/vote/list",{username:e,eid:n})}};exports.a = r;
-//# sourceMappingURL=chunk-H3DXIBVO.cjs.map

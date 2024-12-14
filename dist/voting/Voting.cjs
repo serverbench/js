@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkH3DXIBVOcjs = require('../chunk-H3DXIBVO.cjs');require('../chunk-WBGP2JJE.cjs');exports.default = _chunkH3DXIBVOcjs.a;
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkPFKIADMZcjs = require('../chunk-PFKIADMZ.cjs');require('../chunk-BTEE2PLS.cjs');exports.default = _chunkPFKIADMZcjs.a;
 //# sourceMappingURL=Voting.cjs.map
