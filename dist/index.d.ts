@@ -9,7 +9,7 @@ export { default as IStore } from './store/IStore.js';
 export { default as IStoreCategory } from './store/IStoreCategory.js';
 export { default as IStoreCategorySet } from './store/IStoreCategorySet.js';
 export { default as IDiscount } from './store/IDiscount.js';
-import './voting/IListingDisplay.js';
+export { default as IListingDisplay } from './voting/IListingDisplay.js';
 import './voting/IListingSettings.js';
 import './voting/IListingAmountSettings.js';
 import './voting/IListingSiteDisplay.js';

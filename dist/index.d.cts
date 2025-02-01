@@ -9,7 +9,7 @@ export { default as IStore } from './store/IStore.cjs';
 export { default as IStoreCategory } from './store/IStoreCategory.cjs';
 export { default as IStoreCategorySet } from './store/IStoreCategorySet.cjs';
 export { default as IDiscount } from './store/IDiscount.cjs';
-import './voting/IListingDisplay.cjs';
+export { default as IListingDisplay } from './voting/IListingDisplay.cjs';
 import './voting/IListingSettings.cjs';
 import './voting/IListingAmountSettings.cjs';
 import './voting/IListingSiteDisplay.cjs';

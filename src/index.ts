@@ -10,6 +10,7 @@ import IStoreCategorySet from "./store/IStoreCategorySet.js";
 import Store from "./store/Store.js";
 import Element from "./element/Element.js"
 import IDiscount from "./store/IDiscount.js";
+import IListingDisplay from "./voting/IListingDisplay.js";
 
 export {
     Store,
@@ -21,6 +22,7 @@ export {
     IStore,
     IStoreCategory,
     IStoreCategorySet,
+    IListingDisplay
 }
 
 export {
