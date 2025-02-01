@@ -1,7 +1,8 @@
-import Member from './Member.js';
-import IDiscount from './store/IDiscount.js';
-import ISkuPrice from './store/ISkuPrice.js';
-import IStore from './store/IStore.js';
+import IListingDisplay from './voting/IListingDisplay.cjs';
+import Member from './Member.cjs';
+import IDiscount from './store/IDiscount.cjs';
+import ISkuPrice from './store/ISkuPrice.cjs';
+import IStore from './store/IStore.cjs';
 
 declare class Element {
     private readonly client;
@@ -30,7 +31,7 @@ declare class Store {
 declare class Voting {
     private readonly client;
     constructor(client: Serverbench);
-    list(username?: string, eid?: string): Element;
+    get(username: string | null, eid: string | null): Promise<IListingDisplay>;
 }
 
 declare class Serverbench {

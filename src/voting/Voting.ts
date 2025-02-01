@@ -1,5 +1,5 @@
-import Element from "../element/Element.js"
 import Serverbench from "../Serverbench.js"
+import IListingDisplay from "./IListingDisplay.js"
 
 export default class Voting {
 
@@ -9,11 +9,11 @@ export default class Voting {
         this.client = client
     }
 
-    list(username?: string, eid?: string) {
-        return new Element(this.client, '/community/vote/list', {
+    async get(username: string | null, eid: string | null) {
+        return (await this.client.post('community', '/listing/display', {
             username,
             eid
-        })
+        })) as IListingDisplay
     }
 
 }

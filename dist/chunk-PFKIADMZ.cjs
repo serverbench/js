@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkBTEE2PLScjs = require('./chunk-BTEE2PLS.cjs');var r=class{constructor(e){this.client=e}list(e,n){return new (0, _chunkBTEE2PLScjs.a)(this.client,"/community/vote/list",{username:e,eid:n})}};exports.a = r;
-//# sourceMappingURL=chunk-PFKIADMZ.cjs.map
