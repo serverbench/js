@@ -1,1 +1,2 @@
-"use strict";//# sourceMappingURL=IVote.cjs.map
+"use strict";require('../chunk-NCLUIQ3S.cjs');
+//# sourceMappingURL=IVote.cjs.map
