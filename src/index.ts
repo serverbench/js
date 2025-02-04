@@ -10,12 +10,12 @@ import IStoreCategorySet from "./store/IStoreCategorySet.js";
 import Store from "./store/Store.js";
 import Element from "./element/Element.js"
 import IDiscount from "./store/IDiscount.js";
-import IListingDisplay from "./voting/ListingDisplay.js";
-import IListingSiteDisplay from "./voting/ListingSiteDisplay.js";
 import IListingAmountSettings from "./voting/IListingAmountSettings.js";
 import ISite from "./voting/ISite.js";
 import ISiteSetup from "./voting/ISiteSetup.js";
 import Vote from "./voting/Vote.js";
+import ListingDisplay from "./voting/ListingDisplay.js";
+import ListingSiteDisplay from "./voting/ListingSiteDisplay.js";
 
 export {
     Store,
@@ -30,12 +30,12 @@ export {
 }
 
 export {
-    IListingDisplay,
-    IListingSiteDisplay,
+    ListingDisplay,
+    ListingSiteDisplay,
     IListingAmountSettings,
     ISite,
     ISiteSetup,
-    Vote as IVote
+    Vote
 }
 
 export {
