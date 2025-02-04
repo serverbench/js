@@ -1,5 +1,5 @@
 import Serverbench from "../Serverbench.js"
-import IListingDisplay from "./IListingDisplay.js"
+import ListingDisplay from "./ListingDisplay.js"
 
 export default class Voting {
 
@@ -10,10 +10,13 @@ export default class Voting {
     }
 
     async get(username: string | null, eid: string | null) {
-        return (await this.client.post('community', '/listing/display', {
-            username,
-            eid
-        })) as IListingDisplay
+        return ListingDisplay.fromObject(
+            this.client,
+            await this.client.post('community', '/listing/display', {
+                username,
+                eid
+            })
+        )
     }
 
 }

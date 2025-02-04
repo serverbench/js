@@ -46,6 +46,35 @@ export default class Serverbench {
         return response.json()
     }
 
+    public socket(action: string, ignoreClose = false) {
+        const domain = this.test ? 'ws://localhost:3030' : 'wss://stream.beta.serverbench.io'
+        let ws = new WebSocket(`${domain}?${new URLSearchParams({
+            key: this.clientSecret,
+        })}`)
+        let i = 0
+        ws.onopen = () => {
+            i = 0
+            ws.send(JSON.stringify({
+                action: `community.${this.clientId}.${action}`,
+            }))
+        }
+        if (!ignoreClose) {
+            ws.onclose = () => {
+                i++
+                setTimeout(() => {
+                    ws = this.socket(action, true).ws
+                }, Math.min(1000 * (i) * 5, 30 * 1000));
+            }
+        }
+        return {
+            dispose: () => {
+                ws.onclose = null
+                ws.close()
+            },
+            ws
+        }
+    }
+
     async get(realm: string, url: string) {
         return this.fetch(realm, url)
     }

@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var i=class{constructor(t){this.client=t}async get(t,r){return await this.client.post("community","/listing/display",{username:t,eid:r})}};exports.a = i;
-//# sourceMappingURL=chunk-DKGB4JPC.cjs.map

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var l=class t{constructor(e){this.completed=e}static fromObject(e){return new t(e.completed?new Date(e.completed):null)}};exports.a = l;
+//# sourceMappingURL=chunk-XCHNTARB.cjs.map
