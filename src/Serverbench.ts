@@ -63,8 +63,13 @@ export default class Serverbench {
             if (data.result) {
                 handleMessage(data.result)
             } else {
+                let action = [data.realm]
+                if (data.realm == 'community') {
+                    action.push(this.clientId)
+                }
+                action.push(data.action)
                 ws.send(JSON.stringify({
-                    action: [data.realm, data.action].join('.'),
+                    action: action.join('.'),
                 }))
             }
         }
