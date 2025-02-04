@@ -1,9 +1,9 @@
-import Member from './Member.cjs';
-import IListingSettings from './voting/IListingSettings.cjs';
-import ListingSiteDisplay from './voting/ListingSiteDisplay.cjs';
-import IDiscount from './store/IDiscount.cjs';
-import ISkuPrice from './store/ISkuPrice.cjs';
-import IStore from './store/IStore.cjs';
+import Member from './Member.js';
+import IListingSettings from './voting/IListingSettings.js';
+import ListingSiteDisplay from './voting/ListingSiteDisplay.js';
+import IDiscount from './store/IDiscount.js';
+import ISkuPrice from './store/ISkuPrice.js';
+import IStore from './store/IStore.js';
 
 declare class Element {
     private readonly client;
@@ -62,7 +62,7 @@ declare class Serverbench {
     get store(): Store;
     get voting(): Voting;
     private fetch;
-    socket(action: string, ignoreClose?: boolean): {
+    socket(action: string, handleMessage?: (data: any) => void, ignoreClose?: boolean): {
         dispose: () => void;
         ws: WebSocket;
     };

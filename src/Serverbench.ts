@@ -46,7 +46,7 @@ export default class Serverbench {
         return response.json()
     }
 
-    public socket(action: string, ignoreClose = false) {
+    public socket(action: string, handleMessage = (data: any) => { }, ignoreClose = false) {
         const domain = this.test ? 'ws://localhost:3030' : 'wss://stream.beta.serverbench.io'
         let ws = new WebSocket(`${domain}?${new URLSearchParams({
             key: this.clientSecret,
@@ -58,11 +58,21 @@ export default class Serverbench {
                 action: `community.${this.clientId}.${action}`,
             }))
         }
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data)
+            if (data.result) {
+                handleMessage(data.result)
+            } else {
+                ws.send(JSON.stringify({
+                    action: [data.realm, data.action].join('.'),
+                }))
+            }
+        }
         if (!ignoreClose) {
             ws.onclose = () => {
                 i++
                 setTimeout(() => {
-                    ws = this.socket(action, true).ws
+                    ws = this.socket(action, handleMessage, true).ws
                 }, Math.min(1000 * (i) * 5, 30 * 1000));
             }
         }

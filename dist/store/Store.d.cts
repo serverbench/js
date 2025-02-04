@@ -1,4 +1,4 @@
-export { a as default } from '../Serverbench-BW58oi57.cjs';
+export { a as default } from '../Serverbench-Cyq-UWJU.cjs';
 import '../Member.cjs';
 import './IDiscount.cjs';
 import './ISkuPrice.cjs';

@@ -1,0 +1,2 @@
+import{a as r}from"./chunk-4F2E776B.js";var e=class{constructor(t){this.client=t}async get(t,i){return r.fromObject(this.client,await this.client.post("community","/listing/display",{username:t,eid:i}))}};export{e as a};
+//# sourceMappingURL=chunk-ZYZSWRA2.js.map

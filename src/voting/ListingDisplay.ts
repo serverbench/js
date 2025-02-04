@@ -49,11 +49,9 @@ export default class ListingDisplay {
     }
 
     public subscribe(callback = (display: ListingDisplay) => { }) {
-        const { ws, dispose } = this.client.socket(`listing.display.${this.member.id}`)
-        ws.onmessage = (event) => {
-            const data = JSON.parse(event.data)
+        const { ws, dispose } = this.client.socket(`listing.display.${this.member.id}`, (data)=>{
             callback(ListingDisplay.fromObject(this.client, data))
-        }
+        })
         return dispose
     }
 }

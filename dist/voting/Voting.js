@@ -1,2 +1,2 @@
-import{a}from"../chunk-LCZRCKQA.js";import"../chunk-7HGM5ZPM.js";import"../chunk-IEVREEFS.js";import"../chunk-HMMCZKLF.js";export{a as default};
+import{a}from"../chunk-ZYZSWRA2.js";import"../chunk-4F2E776B.js";import"../chunk-IEVREEFS.js";import"../chunk-HMMCZKLF.js";export{a as default};
 //# sourceMappingURL=Voting.js.map
