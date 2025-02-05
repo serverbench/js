@@ -68,7 +68,7 @@ export default class Serverbench {
         }
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data)
-            if (data.result) {
+            if (data.result != null && ((Array.isArray(data.result) && data.result.length) || Object.keys(data.result).length > 0)) {
                 handleMessage(data.result)
             } else {
                 let action = [data.realm]
