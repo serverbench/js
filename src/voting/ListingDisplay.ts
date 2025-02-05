@@ -44,7 +44,7 @@ export default class ListingDisplay {
             obj.secondaryCompleted ? new Date(obj.secondaryCompleted) : null,
             obj.secondaryNext ? new Date(obj.secondaryNext) : null,
             obj.settings as IListingSettings,
-            obj.sites.map((site: any) => ListingSiteDisplay.fromObject(site))
+            obj.sites.map((site: any) => ListingSiteDisplay.fromObject(site)).sort((a: any, b: any) => a.index - b.index)
         )
     }
 }
