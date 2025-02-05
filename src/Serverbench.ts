@@ -51,6 +51,9 @@ export default class Serverbench {
             method: body ? 'POST' : 'GET',
             body: body ? JSON.stringify(body) : undefined
         })
+        if(response.status < 200 || response.status >= 300) {
+            throw new Error(response.statusText)
+        }
         return response.json()
     }
 
