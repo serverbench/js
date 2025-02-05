@@ -1,3 +1,4 @@
+import Member from "../Member.js"
 import Serverbench from "../Serverbench.js"
 import ListingDisplay from "./ListingDisplay.js"
 
@@ -9,14 +10,11 @@ export default class Voting {
         this.client = client
     }
 
-    async get(username: string | null, eid: string | null) {
-        return ListingDisplay.fromObject(
-            this.client,
-            await this.client.post('community', '/listing/display', {
-                username,
-                eid
-            })
-        )
+    public subscribe(member: Member, callback = (display: ListingDisplay) => { }) {
+        const { ws, dispose } = this.client.socket(`listing.display.${member.id}`, (data) => {
+            callback(ListingDisplay.fromObject(this.client, data))
+        })
+        return dispose
     }
 
 }

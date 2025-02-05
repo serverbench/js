@@ -3,7 +3,7 @@ import Member from "../Member.js";
 import type Serverbench from "../Serverbench.js";
 import IDiscount from "./IDiscount.js";
 import ISkuPrice from "./ISkuPrice.js";
-import type IStore from "./IStore.js";
+import StoreDisplay from "./StoreDisplay.js";
 
 export default class Store {
 
@@ -14,10 +14,10 @@ export default class Store {
     }
 
     async get(username?: string, eid?: string) {
-        return (await this.client.post('community', '/store/view', {
+        return StoreDisplay.fromObject(this.client, await this.client.post('community', '/store/view', {
             username,
             eid
-        })) as IStore
+        }))
     }
 
     checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null) {

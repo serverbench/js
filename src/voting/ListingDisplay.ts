@@ -38,7 +38,7 @@ export default class ListingDisplay {
             obj.id,
             obj.hash,
             new Date(obj.created),
-            obj.member as Member,
+            Member.fromObject(serverbench, obj.member),
             obj.primaryCompleted ? new Date(obj.primaryCompleted) : null,
             obj.primaryNext ? new Date(obj.primaryNext) : null,
             obj.secondaryCompleted ? new Date(obj.secondaryCompleted) : null,
@@ -46,12 +46,5 @@ export default class ListingDisplay {
             obj.settings as IListingSettings,
             obj.sites.map((site: any) => ListingSiteDisplay.fromObject(site))
         )
-    }
-
-    public subscribe(callback = (display: ListingDisplay) => { }) {
-        const { ws, dispose } = this.client.socket(`listing.display.${this.member.id}`, (data)=>{
-            callback(ListingDisplay.fromObject(this.client, data))
-        })
-        return dispose
     }
 }

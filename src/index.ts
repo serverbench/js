@@ -4,7 +4,7 @@ import ICountryCurrency from "./store/ICountryCurrency.js";
 import ISku from "./store/ISku.js";
 import ISkuPerkUsage from "./store/ISkuPerkUsage.js";
 import ISkuPrice from "./store/ISkuPrice.js";
-import IStore from "./store/IStore.js";
+import StoreDisplay from "./store/StoreDisplay.js";
 import IStoreCategory from "./store/IStoreCategory.js";
 import IStoreCategorySet from "./store/IStoreCategorySet.js";
 import Store from "./store/Store.js";
@@ -18,13 +18,13 @@ import ListingDisplay from "./voting/ListingDisplay.js";
 import ListingSiteDisplay from "./voting/ListingSiteDisplay.js";
 
 export {
-    Store,
+    StoreDisplay as Store,
     ICountryCurrency,
     IDiscount,
     ISku,
     ISkuPerkUsage,
     ISkuPrice,
-    IStore,
+    StoreDisplay as IStore,
     IStoreCategory,
     IStoreCategorySet,
 }

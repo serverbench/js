@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var i=class n{constructor(r,e,t,s){this.client=r,this.name=e,this.eid=t,this.id=s}static fromObject(r,e){return new n(r,e.name,e.eid,e.id)}};exports.a = i;
+//# sourceMappingURL=chunk-ZHOZDMQP.cjs.map

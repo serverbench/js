@@ -1,3 +1,4 @@
+import Member from "./Member.js"
 import Store from "./store/Store.js"
 import Voting from "./voting/Voting.js"
 
@@ -28,6 +29,13 @@ export default class Serverbench {
 
     get voting() {
         return new Voting(this)
+    }
+
+    public async member(find: {
+        username?: string,
+        eid?: string,
+    }) {
+        return Member.fromObject(this, await this.post('community', '/member/search', find))
     }
 
     private async fetch(realm: string, url: string, body?: any) {

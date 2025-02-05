@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkHCTMWXQUcjs = require('./chunk-HCTMWXQU.cjs');var e=class{constructor(t){this.client=t}async get(t,i){return _chunkHCTMWXQUcjs.a.fromObject(this.client,await this.client.post("community","/listing/display",{username:t,eid:i}))}};exports.a = e;
-//# sourceMappingURL=chunk-PY5OSSZP.cjs.map
