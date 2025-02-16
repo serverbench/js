@@ -26,7 +26,7 @@ export default class StoreDisplay {
             obj.sets as IStoreCategorySet[],
             obj.currency as ICountryCurrency,
             obj.country,
-            Member.fromObject(client, obj.member)
+            obj.member != null ? Member.fromObject(client, obj.member) : null
         )
     }
 

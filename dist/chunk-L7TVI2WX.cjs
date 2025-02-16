@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkZHOZDMQPcjs = require('./chunk-ZHOZDMQP.cjs');var t=class y{constructor(e,r,n,c,u){this.categories=e,this.sets=r,this.currency=n,this.country=c,this.member=u}static fromObject(e,r){return new y(r.categories,r.sets,r.currency,r.country,_chunkZHOZDMQPcjs.a.fromObject(e,r.member))}};exports.a = t;
-//# sourceMappingURL=chunk-L7TVI2WX.cjs.map
