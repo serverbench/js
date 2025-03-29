@@ -36,6 +36,7 @@ declare class Store {
     private client;
     constructor(client: Serverbench);
     get(username?: string, eid?: string): Promise<StoreDisplay>;
+    subscriptionCount(): Promise<any>;
     checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null): Element;
     billing(): Element;
 }
