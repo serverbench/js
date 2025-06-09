@@ -10,8 +10,11 @@ export default class Voting {
         this.client = client
     }
 
-    public subscribe(member: Member, callback = (display: ListingDisplay) => { }) {
+    public subscribe(member: Member, callback = (display: ListingDisplay|null, ban?: Date) => { }) {
         const { ws, dispose } = this.client.socket(`listing.display.${member.id}`, (data) => {
+            if(data.ban){
+                return callback(null, new Date(data.ban))
+            }
             callback(ListingDisplay.fromObject(this.client, data))
         })
         return dispose

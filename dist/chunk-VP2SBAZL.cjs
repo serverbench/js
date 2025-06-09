@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunkLUTKTZJQcjs = require('./chunk-LUTKTZJQ.cjs');var i=class{constructor(e){this.client=e}subscribe(e,t=s=>{}){let{ws:s,dispose:c}=this.client.socket(`listing.display.${e.id}`,l=>{t(_chunkLUTKTZJQcjs.a.fromObject(this.client,l))});return c}};exports.a = i;
-//# sourceMappingURL=chunk-VP2SBAZL.cjs.map

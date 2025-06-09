@@ -1,0 +1,2 @@
+import{a as s}from"./chunk-4GCQV2YR.js";var r=class{constructor(e){this.client=e}subscribe(e,t=(l,n)=>{}){let{ws:l,dispose:n}=this.client.socket(`listing.display.${e.id}`,i=>{if(i.ban)return t(null,new Date(i.ban));t(s.fromObject(this.client,i))});return n}};export{r as a};
+//# sourceMappingURL=chunk-CTMUE5H3.js.map
