@@ -1,0 +1,2 @@
+import{a as o}from"./chunk-GLEWOHG7.js";var t=class n{constructor(e,r,y,c,u){this.categories=e,this.sets=r,this.currency=y,this.country=c,this.member=u}static fromObject(e,r){return new n(r.categories,r.sets,r.currency,r.country,r.member!=null?o.fromObject(e,r.member):null)}};export{t as a};
+//# sourceMappingURL=chunk-UTQPTYIQ.js.map

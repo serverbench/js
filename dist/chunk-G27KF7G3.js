@@ -1,0 +1,2 @@
+import{a as l}from"./chunk-4PA7GD6K.js";var t=class n{constructor(e,i,r,a,u,o,s){this.id=e,this.index=i,this.last=r,this.next=a,this.primary=u,this.secondary=o,this.site=s}static fromObject(e){return new n(e.id,e.index,e.last?l.fromObject(e.last):null,e.next?new Date(e.next):null,e.primary,e.secondary,e.site)}};export{t as a};
+//# sourceMappingURL=chunk-G27KF7G3.js.map

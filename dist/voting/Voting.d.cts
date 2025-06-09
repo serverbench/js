@@ -1,4 +1,4 @@
-export { V as default } from '../Member-M9xI7pT2.cjs';
+export { V as default } from '../Member-Cg-_D-Xc.cjs';
 import '../store/IDiscount.cjs';
 import '../store/ISkuPrice.cjs';
 import '../store/ICountryCurrency.cjs';

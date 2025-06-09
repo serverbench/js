@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var i=class t{constructor(e,n,l,a,r){this.voteBanned=null;this.client=e,this.name=n,this.eid=l,this.id=a,this.voteBanned=r||null}static fromObject(e,n){return new t(e,n.name,n.eid,n.id,n.voteBanned?new Date(n.voteBanned):null)}};exports.a = i;
+//# sourceMappingURL=chunk-FXVJCHR6.cjs.map

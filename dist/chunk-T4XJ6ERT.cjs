@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunk5EFJ4GIYcjs = require('./chunk-5EFJ4GIY.cjs');var t=class n{constructor(e,i,r,a,u,o,s){this.id=e,this.index=i,this.last=r,this.next=a,this.primary=u,this.secondary=o,this.site=s}static fromObject(e){return new n(e.id,e.index,e.last?_chunk5EFJ4GIYcjs.a.fromObject(e.last):null,e.next?new Date(e.next):null,e.primary,e.secondary,e.site)}};exports.a = t;
+//# sourceMappingURL=chunk-T4XJ6ERT.cjs.map
