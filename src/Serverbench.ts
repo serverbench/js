@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid/non-secure"
 import Member from "./Member.js"
 import Store from "./store/Store.js"
 import Voting from "./voting/Voting.js"
@@ -51,10 +52,14 @@ export default class Serverbench {
             method: body ? 'POST' : 'GET',
             body: body ? JSON.stringify(body) : undefined
         })
-        if(response.status < 200 || response.status >= 300) {
+        if (response.status < 200 || response.status >= 300) {
             throw new Error(response.statusText)
         }
         return response.json()
+    }
+
+    private rid() {
+        return nanoid()
     }
 
     public socket(action: string, handleMessage = (data: any) => { }, ignoreClose = false) {
@@ -63,14 +68,19 @@ export default class Serverbench {
             key: this.clientSecret,
         })}`)
         let i = 0
+        let expecting = this.rid()
         ws.onopen = () => {
             i = 0
             ws.send(JSON.stringify({
                 action: `community.${this.clientId}.${action}`,
+                rid: expecting
             }))
         }
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data)
+            if (data.rid != expecting) {
+                return
+            }
             if (data.result != null && ((Array.isArray(data.result) && data.result.length) || Object.keys(data.result).length > 0)) {
                 handleMessage(data.result)
             } else {
@@ -79,8 +89,10 @@ export default class Serverbench {
                     action.push(this.clientId)
                 }
                 action.push(data.action)
+                expecting = this.rid()
                 ws.send(JSON.stringify({
                     action: action.join('.'),
+                    rid: expecting
                 }))
             }
         }

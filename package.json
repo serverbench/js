@@ -1,6 +1,6 @@
 {
   "name": "@serverbench/js",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "",
   "exports": {
     ".": {
@@ -29,6 +29,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@open-iframe-resizer/core": "1.2.1"
+    "@open-iframe-resizer/core": "1.2.1",
+    "nanoid": "^5.1.5"
   }
 }

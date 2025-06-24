@@ -1,10 +1,10 @@
-import IDiscount from './store/IDiscount.js';
-import ISkuPrice from './store/ISkuPrice.js';
-import ICountryCurrency from './store/ICountryCurrency.js';
-import IStoreCategory from './store/IStoreCategory.js';
-import IStoreCategorySet from './store/IStoreCategorySet.js';
-import IListingSettings from './voting/IListingSettings.js';
-import ListingSiteDisplay from './voting/ListingSiteDisplay.js';
+import IDiscount from './store/IDiscount.cjs';
+import ISkuPrice from './store/ISkuPrice.cjs';
+import ICountryCurrency from './store/ICountryCurrency.cjs';
+import IStoreCategory from './store/IStoreCategory.cjs';
+import IStoreCategorySet from './store/IStoreCategorySet.cjs';
+import IListingSettings from './voting/IListingSettings.cjs';
+import ListingSiteDisplay from './voting/ListingSiteDisplay.cjs';
 
 declare class Element {
     private readonly client;
@@ -77,6 +77,7 @@ declare class Serverbench {
         eid?: string;
     }): Promise<Member>;
     private fetch;
+    private rid;
     socket(action: string, handleMessage?: (data: any) => void, ignoreClose?: boolean): {
         dispose: () => void;
         ws: WebSocket;

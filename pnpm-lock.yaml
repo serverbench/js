@@ -11,6 +11,9 @@ importers:
       '@open-iframe-resizer/core':
         specifier: 1.2.1
         version: 1.2.1
+      nanoid:
+        specifier: ^5.1.5
+        version: 5.1.5
     devDependencies:
       npm-bump:
         specifier: ^0.0.33
@@ -529,6 +532,11 @@ packages:
 
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
+
+  nanoid@5.1.5:
+    resolution: {integrity: sha512-Ir/+ZpE9fDsNH0hQ3C68uyThDXzYcim2EqcZ8zn8Chtt1iylPT9xXJB0kPCnqzgcEGikO9RxSrh63MsmVCU7Fw==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
 
   npm-bump@0.0.33:
     resolution: {integrity: sha512-2+/Rqqt0erQnZPQQ9uNFIho5uW7cdrmdLQAnTdDQqucmb8bWaRyFG5Wr+fOcV48jRAoUgYrAMzpBSq+4u6AnRQ==}
@@ -1165,6 +1173,8 @@ snapshots:
       any-promise: 1.3.0
       object-assign: 4.1.1
       thenify-all: 1.6.0
+
+  nanoid@5.1.5: {}
 
   npm-bump@0.0.33:
     dependencies:
