@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _chunk7KV4THCIcjs = require('../chunk-7KV4THCI.cjs');exports.UpsellType = _chunk7KV4THCIcjs.a;
+//# sourceMappingURL=IUpsell.cjs.map

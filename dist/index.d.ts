@@ -12,6 +12,7 @@ export { default as ISite } from './voting/ISite.js';
 export { default as ISiteSetup } from './voting/ISiteSetup.js';
 export { default as Vote } from './voting/Vote.js';
 export { default as ListingSiteDisplay } from './voting/ListingSiteDisplay.js';
+export { default as IUpsell, UpsellType } from './store/IUpsell.js';
 import './voting/IListingSettings.js';
 
 

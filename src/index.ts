@@ -16,6 +16,7 @@ import ISiteSetup from "./voting/ISiteSetup.js";
 import Vote from "./voting/Vote.js";
 import ListingDisplay from "./voting/ListingDisplay.js";
 import ListingSiteDisplay from "./voting/ListingSiteDisplay.js";
+import IUpsell, { UpsellType } from "./store/IUpsell.js";
 
 export {
     StoreDisplay as Store,
@@ -27,6 +28,8 @@ export {
     StoreDisplay as IStore,
     IStoreCategory,
     IStoreCategorySet,
+    UpsellType,
+    IUpsell
 }
 
 export {
