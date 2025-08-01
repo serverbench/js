@@ -6,5 +6,6 @@ export default interface ISkuPrice {
     amount: number
     currency: ICountryCurrency
     frequency: string | null
+    trialDays: number | null
 
 }
