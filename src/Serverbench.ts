@@ -63,7 +63,7 @@ export default class Serverbench {
     }
 
     public socket(action: string, handleMessage = (data: any) => { }, ignoreClose = false) {
-        const domain = this.test ? 'ws://localhost:3030' : 'wss://stream.beta.serverbench.io'
+        const domain = this.test ? 'ws://localhost:3030' : 'wss://live.beta.serverbench.io'
         let ws = new WebSocket(`${domain}?${new URLSearchParams({
             key: this.clientSecret,
         })}`)
