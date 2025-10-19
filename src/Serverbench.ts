@@ -55,7 +55,6 @@ export default class Serverbench {
         if (response.status < 200 || response.status >= 300) {
             throw new Error(response.statusText)
         }
-        
         return response.json()
     }
 
