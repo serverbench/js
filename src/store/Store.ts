@@ -62,7 +62,7 @@ export default class Store {
             },
             method: 'POST'
         })
-        if (req.status != 200 && req.status != 201) {
+        if (req.status != 200 && req.status != 204) {
             throw new Error(`Error claiming checkout: ${req.statusText}`)
         }
     }
