@@ -41,7 +41,7 @@ export default class Store {
         )
     }
 
-    async getCheckout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null) {
+    async getCheckout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, email: string, country: string | null = null) {
         const finalPrices = prices.map(price => typeof price === 'string' ? price : price.id)
         const finalDiscounts = discounts.map(discount => typeof discount === 'string' ? discount : discount.id)
         const finalMember = typeof member === 'string' ? member : member.id
@@ -49,6 +49,7 @@ export default class Store {
             prices: finalPrices,
             discounts: finalDiscounts,
             member: finalMember,
+            email,
             country: country ?? undefined
         })
         return checkout
