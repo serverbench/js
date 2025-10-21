@@ -38,6 +38,7 @@ declare class Store {
     get(username?: string, eid?: string): Promise<StoreDisplay>;
     subscriptionCount(): Promise<any>;
     checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null): Element;
+    getCheckout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null): Promise<any>;
     billing(): Element;
 }
 

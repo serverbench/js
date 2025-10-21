@@ -1,4 +1,4 @@
-export { b as default } from '../Member-BFeAuDnF.js';
+export { b as default } from '../Member-DXC6bedv.js';
 import './IDiscount.js';
 import './ISkuPrice.js';
 import './ICountryCurrency.js';

@@ -41,6 +41,19 @@ export default class Store {
         )
     }
 
+    async getCheckout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null) {
+        const finalPrices = prices.map(price => typeof price === 'string' ? price : price.id)
+        const finalDiscounts = discounts.map(discount => typeof discount === 'string' ? discount : discount.id)
+        const finalMember = typeof member === 'string' ? member : member.id
+        const checkout = await this.client.post('community', '/store/checkout', {
+            prices: finalPrices,
+            discounts: finalDiscounts,
+            member: finalMember,
+            country: country ?? undefined
+        })
+        return checkout
+    }
+
     billing() {
         return new Element(this.client, '/billing')
     }
