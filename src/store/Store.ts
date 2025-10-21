@@ -54,6 +54,18 @@ export default class Store {
         return checkout
     }
 
+    async claimCheckout(token: string) {
+        const req = await fetch(`${this.client.domain}/checkout/claim`, {
+            headers: {
+                authorization: `Bearer ${token}`
+            },
+            method: 'POST'
+        })
+        if (req.status != 200 && req.status != 201) {
+            throw new Error(`Error claiming checkout: ${req.statusText}`)
+        }
+    }
+
     billing() {
         return new Element(this.client, '/billing')
     }

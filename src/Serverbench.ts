@@ -39,15 +39,18 @@ export default class Serverbench {
         return Member.fromObject(this, await this.post('community', '/member/search', find))
     }
 
+    get domain(): string {
+        return this.test ? 'https://dev.serverbench.io' : 'https://api.beta.serverbench.io'
+    }
+
     private async fetch(realm: string, url: string, body?: any) {
-        const domain = this.test ? 'https://dev.serverbench.io' : 'https://api.beta.serverbench.io'
         const headers = new Headers({
             authorization: `ApiKey ${this.clientSecret}`,
         })
         if (body) {
             headers.set('Content-Type', 'application/json')
         }
-        const response = await fetch(`${domain}/${realm}/${this.clientId}${url}`, {
+        const response = await fetch(`${this.domain}/${realm}/${this.clientId}${url}`, {
             headers,
             method: body ? 'POST' : 'GET',
             body: body ? JSON.stringify(body) : undefined

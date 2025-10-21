@@ -39,6 +39,7 @@ declare class Store {
     subscriptionCount(): Promise<any>;
     checkout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null): Element;
     getCheckout(prices: ISkuPrice[] | string[], discounts: IDiscount[] | string[], member: Member | string, country: string | null): Promise<any>;
+    claimCheckout(token: string): Promise<void>;
     billing(): Element;
 }
 
@@ -77,6 +78,7 @@ declare class Serverbench {
         username?: string;
         eid?: string;
     }): Promise<Member>;
+    get domain(): string;
     private fetch;
     private rid;
     socket(action: string, handleMessage?: (data: any) => void, ignoreClose?: boolean): {
