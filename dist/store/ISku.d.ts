@@ -12,6 +12,7 @@ interface ISku {
     prices: ISkuPrice[];
     available: boolean;
     discounts: IDiscount[];
+    enabled: boolean;
 }
 
 export type { ISku as default };
